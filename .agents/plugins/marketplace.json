@@ -1,7 +1,7 @@
 {
-  "name": "personal",
+  "name": "ai-plugin-marketplace",
   "interface": {
-    "displayName": "Personal"
+    "displayName": "AI Plugin Marketplace"
   },
   "plugins": [
     {

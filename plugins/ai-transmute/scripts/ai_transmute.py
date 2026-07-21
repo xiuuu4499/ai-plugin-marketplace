@@ -367,14 +367,25 @@ def render_manifest(source: Path, package: Path, inventory: dict[str, Any], targ
     name, version, description = manifest_identity(source, inventory)
     base = {"name": name, "version": version, "description": description}
     if target == "codex":
+        source_manifest = load_manifest(source, inventory) if source.is_dir() else {}
+        source_author = source_manifest.get("author")
+        if isinstance(source_author, dict):
+            author = {key: value for key, value in source_author.items() if key in {"name", "email", "url"} and value}
+            developer_name = str(author.get("name") or "AI Transmute conversion")
+        elif isinstance(source_author, str) and source_author.strip():
+            author = {"name": source_author.strip()}
+            developer_name = source_author.strip()
+        else:
+            author = {"name": "AI Transmute conversion"}
+            developer_name = "AI Transmute conversion"
         base.update({
-            "author": {"name": "Local developer"},
+            "author": author,
             "skills": "./skills/",
             "interface": {
                 "displayName": " ".join(p.capitalize() for p in name.split("-")),
                 "shortDescription": description[:64],
                 "longDescription": description,
-                "developerName": "Local developer",
+                "developerName": developer_name,
                 "category": "Productivity",
                 "capabilities": ["Read", "Write"],
                 "defaultPrompt": f"Use {name} for this task.",

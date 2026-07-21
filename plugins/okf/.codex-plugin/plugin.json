@@ -1,21 +1,32 @@
 {
   "name": "okf",
-  "version": "1.9.0+codex.20260721060357",
-  "description": "Open Knowledge Format skills and advisory bundle curation for Codex.",
+  "version": "1.9.0+codex.20260721072519",
+  "description": "A Codex adaptation of Open Knowledge Format authoring, migration, validation, and curation workflows.",
   "author": {
-    "name": "Local developer"
+    "name": "xiuuu4499",
+    "url": "https://github.com/xiuuu4499"
   },
+  "homepage": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+  "repository": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "okf",
+    "knowledge",
+    "migration",
+    "curation"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "OKF",
     "shortDescription": "Author and curate Open Knowledge Format bundles.",
     "longDescription": "Search, produce, migrate, maintain, validate, lint, and curate portable Open Knowledge Format bundles.",
-    "developerName": "Local developer",
+    "developerName": "xiuuu4499",
     "category": "Productivity",
     "capabilities": [
       "Read",
       "Write"
     ],
+    "websiteURL": "https://github.com/xiuuu4499/ai-plugin-marketplace",
     "defaultPrompt": "Use the OKF skill to inspect and curate this repository's knowledge bundle."
   }
 }

@@ -29,7 +29,13 @@ class AITransmuteTests(unittest.TestCase):
         (self.source / "hooks" / "scripts").mkdir(parents=True)
         (self.source / "agents").mkdir()
         (self.source / ".claude-plugin" / "plugin.json").write_text(
-            json.dumps({"name": "sample", "version": "1.0.0", "description": "Sample plugin"}), encoding="utf-8"
+            json.dumps({
+                "name": "sample",
+                "version": "1.0.0",
+                "description": "Sample plugin",
+                "author": {"name": "Fixture author", "url": "https://example.test/fixture"},
+            }),
+            encoding="utf-8",
         )
         (self.source / "skills" / "hello" / "SKILL.md").write_text(
             "---\nname: hello\ndescription: Say hello.\n---\n\nSay hello.\n", encoding="utf-8"
@@ -85,6 +91,10 @@ class AITransmuteTests(unittest.TestCase):
                 self.assertTrue((job / "report.md").is_file())
                 self.assertTrue((job / "job.json").is_file())
                 self.assertEqual(self.digest(job / "package" / "notebooks" / "workflow.ipynb"), source_hash)
+                if target == "codex":
+                    generated = json.loads((job / manifest).read_text(encoding="utf-8"))
+                    self.assertEqual(generated["author"]["name"], "Fixture author")
+                    self.assertEqual(generated["interface"]["developerName"], "Fixture author")
         self.assertEqual(self.digest(self.source / "workflow.ipynb"), source_hash)
 
     def test_extract_is_collision_safe(self):
