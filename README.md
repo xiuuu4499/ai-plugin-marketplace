@@ -40,7 +40,7 @@ AI Scholar uses a separate, evidence-led workflow:
 4. Design a traceable plugin interface and present it for explicit human approval.
 5. Implement, validate, and hand off only the approved design.
 
-Its stateful job record prevents implementation before the review artifact records explicit approval. AI Scholar’s primary user interface is its `study`, `sources`, `knowledge`, `architect`, `review`, `implement`, `validate`, `maintain`, and `doctor` skills; its small Python CLI persists state and verifies gates. The optional curation hook is advisory and fail-open.
+Its stateful job record prevents implementation before the review artifact records explicit approval. AI Scholar’s primary user interface is its `study`, `sources`, `knowledge`, `architect`, `review`, `implement`, `validate`, `maintain`, `doctor`, and `plan-mode` skills; its small Python CLI persists state and verifies gates. The optional curation hook is advisory and fail-open.
 
 ## Install Codex CLI in a Codespace
 
@@ -104,6 +104,7 @@ AI Scholar exposes these skills:
 - `validate` — check source provenance, job state, OKF curation, traceability, and package quality.
 - `maintain` — assess source drift and revise research without overwriting prior evidence.
 - `doctor` — diagnose missing dependencies and validation failures.
+- `plan-mode` — map a Codex Plan-mode plan to the current AI Scholar job state and required gates.
 
 ## Requirements
 

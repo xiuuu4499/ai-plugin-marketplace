@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan AI Scholar workflow"
+  short_description: "Tie Codex plans to research-job phases"
+  default_prompt: "Plan this AI Scholar job through its next required phases."
