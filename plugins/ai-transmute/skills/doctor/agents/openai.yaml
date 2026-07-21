@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Transmute Doctor"
+  short_description: "Check conversion tools and native validators"
+  default_prompt: "Use $doctor to diagnose the AI Transmute environment."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Learn AI Format"
+  short_description: "Curate a new AI format into the OKF catalog"
+  default_prompt: "Use $learn-format to learn this AI format from official sources."

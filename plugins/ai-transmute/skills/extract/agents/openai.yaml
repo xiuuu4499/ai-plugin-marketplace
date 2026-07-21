@@ -1,0 +1,4 @@
+interface:
+  display_name: "Extract AI Assets"
+  short_description: "Extract selected assets from AI packages"
+  default_prompt: "Use $extract to pull reusable assets from this package."

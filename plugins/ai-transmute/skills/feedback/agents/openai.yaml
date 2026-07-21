@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apply Conversion Feedback"
+  short_description: "Correct format knowledge and conversion jobs"
+  default_prompt: "Use $feedback to apply this correction to AI Transmute."

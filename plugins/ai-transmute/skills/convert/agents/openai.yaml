@@ -1,0 +1,4 @@
+interface:
+  display_name: "Convert AI Artifact"
+  short_description: "Convert AI artifacts through audited OKF jobs"
+  default_prompt: "Use $convert to convert this artifact to another AI format."

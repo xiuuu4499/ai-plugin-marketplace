@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open Knowledge Format"
+  short_description: "Author, search, migrate, and curate OKF bundles"
+  default_prompt: "Use $okf to inspect and curate this Open Knowledge Format bundle."

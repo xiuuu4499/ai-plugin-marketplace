@@ -1,0 +1,4 @@
+interface:
+  display_name: "OKF Router"
+  short_description: "Route any task to the bundled OKF workflow"
+  default_prompt: "Use $gem to inspect and curate this OKF bundle."

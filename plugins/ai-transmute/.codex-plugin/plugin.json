@@ -1,0 +1,21 @@
+{
+  "name": "ai-transmute",
+  "version": "0.1.0+codex.20260721060357",
+  "description": "Convert AI skills, plugins, hooks, agents, and notebooks through auditable OKF intermediates.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI Transmute",
+    "shortDescription": "Port AI artifacts through auditable OKF jobs.",
+    "longDescription": "Inspect, plan, convert, extract, transform, validate, and compare AI extension artifacts across Codex, Claude, Copilot, Grok, and Gemini.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": "Inspect this AI artifact, plan a loss-aware conversion, and render an audited target package."
+  }
+}

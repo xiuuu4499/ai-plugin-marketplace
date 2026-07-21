@@ -1,0 +1,4 @@
+interface:
+  display_name: "Validate AI Artifact"
+  short_description: "Validate OKF jobs and target AI packages"
+  default_prompt: "Use $validate to check this AI artifact or conversion job."

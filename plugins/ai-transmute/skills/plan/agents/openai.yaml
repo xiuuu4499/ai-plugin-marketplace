@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan AI Conversion"
+  short_description: "Preview mappings and losses before conversion"
+  default_prompt: "Use $plan to preview conversion of this artifact."

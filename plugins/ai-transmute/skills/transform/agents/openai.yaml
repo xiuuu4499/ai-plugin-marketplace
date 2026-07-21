@@ -1,0 +1,4 @@
+interface:
+  display_name: "Transform AI Workflow"
+  short_description: "Redesign AI assets with explicit semantic changes"
+  default_prompt: "Use $transform to redesign this AI workflow."

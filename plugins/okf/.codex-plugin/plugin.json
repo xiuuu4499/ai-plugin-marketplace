@@ -1,0 +1,21 @@
+{
+  "name": "okf",
+  "version": "1.9.0+codex.20260721060357",
+  "description": "Open Knowledge Format skills and advisory bundle curation for Codex.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "OKF",
+    "shortDescription": "Author and curate Open Knowledge Format bundles.",
+    "longDescription": "Search, produce, migrate, maintain, validate, lint, and curate portable Open Knowledge Format bundles.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": "Use the OKF skill to inspect and curate this repository's knowledge bundle."
+  }
+}

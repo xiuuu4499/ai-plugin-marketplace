@@ -1,0 +1,4 @@
+interface:
+  display_name: "Inspect AI Artifact"
+  short_description: "Inventory and identify portable AI components"
+  default_prompt: "Use $inspect to identify this AI artifact and its portability risks."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diff AI Artifacts"
+  short_description: "Compare AI artifact behavior and structure"
+  default_prompt: "Use $diff to compare the source and converted AI artifacts."
