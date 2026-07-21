@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implement approved plugin"
+  short_description: "Build a human-approved plugin design"
+  default_prompt: "Implement this explicitly approved AI Scholar design."

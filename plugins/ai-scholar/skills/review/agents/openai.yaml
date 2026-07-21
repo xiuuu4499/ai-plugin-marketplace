@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review plugin design"
+  short_description: "Run the required human approval gate"
+  default_prompt: "Present the full AI Scholar plugin design for my review."

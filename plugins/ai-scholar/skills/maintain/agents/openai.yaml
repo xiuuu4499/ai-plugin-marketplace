@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintain research"
+  short_description: "Refresh a research job after source drift"
+  default_prompt: "Assess source drift and maintain this AI Scholar research job."

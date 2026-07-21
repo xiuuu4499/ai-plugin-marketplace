@@ -1,0 +1,4 @@
+interface:
+  display_name: "Validate research job"
+  short_description: "Check evidence, OKF, state, and package quality"
+  default_prompt: "Validate this AI Scholar job and its resulting plugin."

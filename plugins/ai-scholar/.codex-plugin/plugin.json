@@ -1,0 +1,33 @@
+{
+  "name": "ai-scholar",
+  "version": "0.1.0+codex.20260721084553",
+  "description": "Learn a subject deeply, curate an evidence-led OKF knowledge base, and design a human-approved Codex plugin.",
+  "author": {
+    "name": "xiuuu4499",
+    "url": "https://github.com/xiuuu4499"
+  },
+  "homepage": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+  "repository": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "knowledge",
+    "okf",
+    "plugin-design",
+    "provenance"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI Scholar",
+    "shortDescription": "Research subjects into approved, evidence-led plugins.",
+    "longDescription": "Collect, deduplicate, prioritize, and curate sources into an auditable OKF knowledge base; then design, review, implement, and validate a Codex plugin.",
+    "developerName": "xiuuu4499",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+    "defaultPrompt": "Study this subject deeply, curate an evidence-led OKF knowledge base, and present a Codex plugin design for my approval."
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Study a subject"
+  short_description: "Start an evidence-led research job"
+  default_prompt: "Study a subject deeply and start an AI Scholar research job."

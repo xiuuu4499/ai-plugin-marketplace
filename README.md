@@ -1,13 +1,14 @@
 # AI Plugin Marketplace
 
-A dedicated Codex marketplace for portable AI-extension tooling. It currently ships two plugins:
+A dedicated Codex marketplace for portable AI-extension tooling. It currently ships three plugins:
 
 | Plugin | Purpose |
 | --- | --- |
 | `okf` | Author, search, migrate, validate, lint, maintain, and curate [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf) bundles. |
 | `ai-transmute` | Inspect and convert AI skills, commands, agents, hooks, plugins, instruction files, MCP/LSP configuration, and notebooks through auditable OKF intermediates. |
+| `ai-scholar` | Research a subject deeply, curate cited OKF knowledge, and design a human-approved Codex plugin. |
 
-The marketplace lives at [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json). Both plugins are maintained in this repository and published by [xiuuu4499](https://github.com/xiuuu4499).
+The marketplace lives at [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json). All plugins are maintained in this repository and published by [xiuuu4499](https://github.com/xiuuu4499).
 
 ## Scope
 
@@ -30,6 +31,16 @@ ai-transmute/<timestamp>-<source>-to-<target>/
 ```
 
 Jupyter notebooks retain their cells, metadata, attachments, and code. Hosted AI notebooks or projects without a documented portable import API are rendered as import packs with manual setup instructions.
+
+AI Scholar uses a separate, evidence-led workflow:
+
+1. Collect official and independent sources, preserving a reviewable record of duplicates and exclusions.
+2. Prioritize retained sources, contradictions, uncertainty, and special cases.
+3. Build and curate a cited OKF knowledge bundle after each source import.
+4. Design a traceable plugin interface and present it for explicit human approval.
+5. Implement, validate, and hand off only the approved design.
+
+Its stateful job record prevents implementation before the review artifact records explicit approval. AI Scholar’s primary user interface is its `study`, `sources`, `knowledge`, `architect`, `review`, `implement`, `validate`, `maintain`, and `doctor` skills; its small Python CLI persists state and verifies gates. The optional curation hook is advisory and fail-open.
 
 ## Install Codex CLI in a Codespace
 
@@ -60,6 +71,7 @@ From the root of this clone:
 codex plugin marketplace add "$PWD"
 codex plugin add okf@ai-plugin-marketplace
 codex plugin add ai-transmute@ai-plugin-marketplace
+codex plugin add ai-scholar@ai-plugin-marketplace
 ```
 
 Start a new Codex thread after installation so newly installed skills and hooks are loaded. The advisory hooks are fail-open: they provide capped validation context but do not rewrite files or grant permissions.
@@ -81,9 +93,22 @@ AI Transmute exposes these skills:
 - `diff` — compare behavior and component inventories rather than filenames alone.
 - `doctor` — report required and optional runtime availability.
 
+AI Scholar exposes these skills:
+
+- `study` — initialize a research contract and auditable job.
+- `sources` — collect, deduplicate, rank, and retain source decisions.
+- `knowledge` — create and curate cited OKF concepts in source-priority order.
+- `architect` — design skills, scripts, hooks, and other surfaces from curated evidence.
+- `review` — present the complete design packet and record explicit approval or requested changes.
+- `implement` — enforce approval before building the approved plugin.
+- `validate` — check source provenance, job state, OKF curation, traceability, and package quality.
+- `maintain` — assess source drift and revise research without overwriting prior evidence.
+- `doctor` — diagnose missing dependencies and validation failures.
+
 ## Requirements
 
 - Python 3 for AI Transmute's deterministic engine and advisory hook.
+- Python 3 for AI Scholar's deterministic job engine and advisory hook.
 - The `okf` CLI for audited conversion and knowledge-catalog workflows.
 - Ruby for the OKF plugin's advisory curation hook.
 - Target-native CLIs are optional; when present, validation can use them in addition to internal checks.
@@ -96,6 +121,7 @@ Run the deterministic test suite:
 
 ```bash
 python3 -m unittest discover -s plugins/ai-transmute/tests -v
+python3 -m unittest discover -s plugins/ai-scholar/tests -v
 ```
 
 Validate the persistent knowledge catalog:
@@ -104,6 +130,13 @@ Validate the persistent knowledge catalog:
 okf validate plugins/ai-transmute/knowledge
 okf lint plugins/ai-transmute/knowledge
 okf loose plugins/ai-transmute/knowledge
+```
+
+Before committing an AI Scholar plugin change, also run:
+
+```bash
+python3 plugins/ai-scholar/scripts/ai_scholar.py init "smoke test" --output /tmp --json
+python3 /home/codespace/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py plugins/ai-scholar
 ```
 
 Plugin manifests and skill folders can additionally be checked with the validators bundled with Codex's `plugin-creator` and `skill-creator` skills.

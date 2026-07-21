@@ -1,0 +1,4 @@
+interface:
+  display_name: "Curate sources"
+  short_description: "Collect and prioritize research sources"
+  default_prompt: "Collect, deduplicate, and prioritize sources for this AI Scholar job."

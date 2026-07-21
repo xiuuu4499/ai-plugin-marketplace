@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design plugin interface"
+  short_description: "Architect an evidence-led Codex plugin"
+  default_prompt: "Design the Codex plugin interface from this curated research job."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build knowledge"
+  short_description: "Curate a cited OKF knowledge bundle"
+  default_prompt: "Build and curate the AI Scholar knowledge bundle from retained sources."

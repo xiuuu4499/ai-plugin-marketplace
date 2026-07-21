@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagnose AI Scholar"
+  short_description: "Troubleshoot setup and validation"
+  default_prompt: "Diagnose why this AI Scholar job or its validation is failing."
