@@ -19,6 +19,12 @@ Note the date of the last update.
 
 ### Step 2 — Re-crawl the discovery sources
 
+**Version selection:** Re-crawl `free-pro-team@latest` by default. If a prior crawl included Enterprise versions (check `knowledge/log.md`), re-crawl those too. To list all GHES release versions:
+
+```shell
+curl -s "https://docs.github.com/api/pagelist/versions"
+```
+
 ```shell
 # Fetch the current llms.txt
 curl -s "https://docs.github.com/llms.txt"

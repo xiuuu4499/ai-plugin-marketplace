@@ -13,6 +13,10 @@ Read the knowledge base strategy guide:
 
 `cat "$PLUGIN_ROOT/knowledge/apis/search-strategies.md"`
 
+Read the Enterprise deployment guide before selecting a version:
+
+`cat "$PLUGIN_ROOT/knowledge/apis/enterprise-deployments.md"`
+
 Read the ai-scholar plan-mode skill:
 
 `cat "$(codex plugin-root ai-scholar)/skills/plan-mode/SKILL.md"`
@@ -37,11 +41,13 @@ python3 "$(codex plugin-root ai-scholar)/scripts/ai_scholar.py" init "<github-do
 
 ### Step 2 — Crawl GitHub Docs for domain content
 
+**Version selection:** Default to `free-pro-team@latest`. Use `enterprise-cloud@latest` or a specific GHES version (e.g. `3.12`) only when explicitly requested or when a documented exception applies (see `enterprise-deployments.md`). If the target domain is known to have more complete Enterprise documentation (e.g. Copilot Plugin), note this and use Enterprise docs with an explicit disclosure in the generated plugin's knowledge files.
+
 Use the pagelist filter and article body strategy from the knowledge base:
 
 ```shell
-# Get all relevant page paths
-curl -s "https://docs.github.com/api/pagelist/en/free-pro-team@latest" \
+# Get all relevant page paths (substitute <version> with the selected version string)
+curl -s "https://docs.github.com/api/pagelist/en/<version>" \
   | bash "$PLUGIN_ROOT/scripts/github-docs-index-filter.sh" "<keyword>"
 
 # Fetch each matching article

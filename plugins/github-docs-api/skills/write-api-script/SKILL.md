@@ -12,6 +12,7 @@ description: Create a standalone script (shell or Python) that invokes GitHub Do
    - What output format is needed (Markdown, JSON, plain text, filtered list)?
    - What language is preferred (shell/`curl`, Python)?
    - Should the script be idempotent and cacheable?
+   - **Are they targeting GitHub.com, GitHub Enterprise Cloud, or GitHub Enterprise Server?** Default to `free-pro-team@latest` unless they specify otherwise. If Enterprise, determine the deployment model and version (see `knowledge/apis/enterprise-deployments.md`).
 
 2. Read the relevant knowledge base concepts:
 
@@ -20,6 +21,7 @@ cat "$PLUGIN_ROOT/knowledge/apis/search-strategies.md"
 cat "$PLUGIN_ROOT/knowledge/apis/search-api.md"
 cat "$PLUGIN_ROOT/knowledge/apis/article-api.md"
 cat "$PLUGIN_ROOT/knowledge/apis/pagelist-api.md"
+cat "$PLUGIN_ROOT/knowledge/apis/enterprise-deployments.md"
 ```
 
 3. Reference the provided utility scripts for patterns:
@@ -34,6 +36,7 @@ cat "$PLUGIN_ROOT/scripts/github_docs.py"
    - Handle HTTP errors explicitly (check exit codes for `curl`, status codes for Python `requests`/`urllib`).
    - Accept parameters via command-line arguments, not hardcoded values.
    - Add a usage comment or `--help` flag.
+   - Default the `--version` argument to `free-pro-team@latest`. Accept `enterprise-cloud@latest` or a numeric GHES version (e.g. `3.12`) as overrides.
 
 5. Show the script to the user and explain:
    - What it does, step by step.
