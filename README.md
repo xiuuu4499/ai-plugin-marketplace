@@ -110,10 +110,10 @@ AI Scholar exposes these skills:
 
 GitHub Docs API exposes these skills:
 
-- `answer-short-question` — quickly look up and answer a focused question using the GitHub Docs Search and Article Body APIs.
-- `extract-github-sme-plugin` — create a new GitHub domain Subject Matter Expert agent plugin via AI Scholar's plan-mode workflow.
-- `update-github-apis` — re-crawl the GitHub Docs API surface to detect changes and update the plugin's knowledge base.
-- `write-api-script` — create a standalone shell or Python script that invokes GitHub Docs APIs to fetch or process documentation content.
+- `answer-short-question` — quickly look up and answer a focused question using the GitHub Docs Search and Article Body REST APIs.
+- `extract-github-sme-plugin` — create a new GitHub domain Subject Matter Expert agent plugin by combining GitHub Docs API content extraction with the ai-scholar research and design workflow.
+- `update-github-apis` — re-crawl the GitHub Docs API surface to detect documentation changes and refresh the plugin's knowledge base.
+- `write-api-script` — create a standalone shell or Python script that calls GitHub Docs APIs directly to fetch or process documentation content without AI tooling.
 
 ## Requirements
 
