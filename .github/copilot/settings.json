@@ -1,0 +1,13 @@
+{
+    "enabledPlugins": {
+        "my-plugin@agent-skills": true
+    },
+    "extraKnownMarketplaces": {
+        "agent-skills": {
+            "source": {
+                "source": "github",
+                "repo": "OWNER/REPO"
+            }
+        }
+    }
+}
