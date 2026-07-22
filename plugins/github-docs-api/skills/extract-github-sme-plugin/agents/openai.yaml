@@ -1,0 +1,4 @@
+interface:
+  display_name: "Extract GitHub SME Plugin"
+  short_description: "Create a GitHub domain SME plugin via ai-scholar and OKF"
+  default_prompt: "Use $extract-github-sme-plugin to build a new SME plugin for this GitHub domain."

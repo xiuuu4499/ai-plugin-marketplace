@@ -1,0 +1,33 @@
+{
+  "name": "github-docs-api",
+  "version": "0.1.0+codex.20260722095556",
+  "description": "GitHub Docs Expert agent with skills for searching, retrieving, and building upon GitHub documentation via the official GitHub Docs API.",
+  "author": {
+    "name": "xiuuu4499",
+    "url": "https://github.com/xiuuu4499"
+  },
+  "homepage": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+  "repository": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "docs",
+    "api",
+    "search",
+    "knowledge"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GitHub Docs Expert",
+    "shortDescription": "Search, retrieve, and build upon GitHub documentation.",
+    "longDescription": "Quickly answer questions from GitHub Docs, extract domain knowledge into SME plugins, write API-driven scripts, and keep documentation knowledge current—all via the official GitHub Docs API.",
+    "developerName": "xiuuu4499",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+    "defaultPrompt": "Use the GitHub Docs Expert to look up information from the GitHub documentation."
+  }
+}

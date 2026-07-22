@@ -1,0 +1,4 @@
+interface:
+  display_name: "Answer GitHub Docs Question"
+  short_description: "Quickly look up and answer a question from GitHub Docs"
+  default_prompt: "Use $answer-short-question to look up the answer to this GitHub question."
