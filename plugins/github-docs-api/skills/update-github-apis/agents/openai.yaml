@@ -1,0 +1,4 @@
+interface:
+  display_name: "Update GitHub Docs API Knowledge"
+  short_description: "Re-crawl GitHub Docs to detect and apply changes to the knowledge base"
+  default_prompt: "Use $update-github-apis to refresh this plugin's knowledge from the latest GitHub Docs."

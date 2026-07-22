@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write GitHub Docs API Script"
+  short_description: "Generate a script to fetch GitHub documentation via the Docs API"
+  default_prompt: "Use $write-api-script to write a script that retrieves this GitHub documentation."
