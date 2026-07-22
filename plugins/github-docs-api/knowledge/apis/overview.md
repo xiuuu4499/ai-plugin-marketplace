@@ -37,3 +37,4 @@ The canonical entry point for AI agents is `https://docs.github.com/llms.txt`, w
 - The Pagelist endpoint returns a **newline-separated plain-text list** of paths.
 - The Search API requires a `client_name` parameter for external (non-browser) clients.
 - All endpoints are public and require no authentication.
+- The `:version` path parameter controls which edition of the docs is served. The default for non-Enterprise use is `free-pro-team@latest`. Enterprise editions use `enterprise-cloud@latest` (GHEC) or a numeric version string such as `3.12` (GHES). See `apis/enterprise-deployments.md` for full details and guidance on when to use each.

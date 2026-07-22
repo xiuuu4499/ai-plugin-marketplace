@@ -11,6 +11,7 @@ This knowledge bundle documents the GitHub Docs API surface: how to discover, se
 | Pagelist API | [apis/pagelist-api.md](apis/pagelist-api.md) | github-docs, api, pagelist |
 | Search API | [apis/search-api.md](apis/search-api.md) | github-docs, api, search |
 | Search strategies | [apis/search-strategies.md](apis/search-strategies.md) | github-docs, search, strategy |
+| Enterprise deployment models | [apis/enterprise-deployments.md](apis/enterprise-deployments.md) | github-docs, enterprise, deployment, version |
 
 ## Tags
 
@@ -21,3 +22,6 @@ This knowledge bundle documents the GitHub Docs API surface: how to discover, se
 - `search` — relates to searching documentation content
 - `llms-txt` — relates to the llms.txt discovery standard
 - `strategy` — describes a decision or pattern for choosing between approaches
+- `enterprise` — relates to GitHub Enterprise Cloud or GitHub Enterprise Server
+- `deployment` — relates to a GitHub deployment model (cloud-hosted vs. self-hosted)
+- `version` — relates to documentation version strings used in API calls
