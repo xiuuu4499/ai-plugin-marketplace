@@ -1,12 +1,13 @@
 # AI Plugin Marketplace
 
-A dedicated Codex marketplace for portable AI-extension tooling. It currently ships three plugins:
+A dedicated Codex marketplace for portable AI-extension tooling. It currently ships four plugins:
 
 | Plugin | Purpose |
 | --- | --- |
 | `okf` | Author, search, migrate, validate, lint, maintain, and curate [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf) bundles. |
 | `ai-transmute` | Inspect and convert AI skills, commands, agents, hooks, plugins, instruction files, MCP/LSP configuration, and notebooks through auditable OKF intermediates. |
 | `ai-scholar` | Research a subject deeply, curate cited OKF knowledge, and design a human-approved Codex plugin. |
+| `github-docs-api` | Search, retrieve, and build upon GitHub documentation via the official GitHub Docs API. |
 
 The marketplace lives at [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json). All plugins are maintained in this repository and published by [xiuuu4499](https://github.com/xiuuu4499).
 
@@ -72,6 +73,7 @@ codex plugin marketplace add "$PWD"
 codex plugin add okf@ai-plugin-marketplace
 codex plugin add ai-transmute@ai-plugin-marketplace
 codex plugin add ai-scholar@ai-plugin-marketplace
+codex plugin add github-docs-api@ai-plugin-marketplace
 ```
 
 Start a new Codex thread after installation so newly installed skills and hooks are loaded. The advisory hooks are fail-open: they provide capped validation context but do not rewrite files or grant permissions.
@@ -106,10 +108,18 @@ AI Scholar exposes these skills:
 - `doctor` — diagnose missing dependencies and validation failures.
 - `plan-mode` — map a Codex Plan-mode plan to the current AI Scholar job state and required gates.
 
+GitHub Docs API exposes these skills:
+
+- `answer-short-question` — quickly look up and answer a focused question using the GitHub Docs Search and Article Body APIs.
+- `extract-github-sme-plugin` — create a new GitHub domain Subject Matter Expert agent plugin via AI Scholar's plan-mode workflow.
+- `update-github-apis` — re-crawl the GitHub Docs API surface to detect changes and update the plugin's knowledge base.
+- `write-api-script` — create a standalone shell or Python script that invokes GitHub Docs APIs to fetch or process documentation content.
+
 ## Requirements
 
 - Python 3 for AI Transmute's deterministic engine and advisory hook.
 - Python 3 for AI Scholar's deterministic job engine and advisory hook.
+- Python 3 for the GitHub Docs API plugin's validation script.
 - The `okf` CLI for audited conversion and knowledge-catalog workflows.
 - Ruby for the OKF plugin's advisory curation hook.
 - Target-native CLIs are optional; when present, validation can use them in addition to internal checks.
@@ -123,6 +133,7 @@ Run the deterministic test suite:
 ```bash
 python3 -m unittest discover -s plugins/ai-transmute/tests -v
 python3 -m unittest discover -s plugins/ai-scholar/tests -v
+python3 -m unittest discover -s plugins/github-docs-api/tests -v
 ```
 
 Validate the persistent knowledge catalog:
