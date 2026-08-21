@@ -1,0 +1,35 @@
+{
+  "name": "local-model-workbench",
+  "version": "0.1.0",
+  "description": "Hybrid Codex and Kilo workflow support for llama.cpp, Qwen3.8, MiniMax H3, ComfyUI, VS Code, and local model development.",
+  "author": {
+    "name": "xiuuu4499",
+    "url": "https://github.com/xiuuu4499"
+  },
+  "homepage": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+  "repository": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "local-models",
+    "llama-cpp",
+    "qwen",
+    "minimax",
+    "comfyui",
+    "vscode",
+    "kilo"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Local Model Workbench",
+    "shortDescription": "Plan and operate local model workflows.",
+    "longDescription": "Provides Codex skills, scripts, and Kilo-ready artifacts for local llama.cpp/Qwen3.8, MiniMax H3, ComfyUI, and VS Code model workflows while keeping request policy delegated to the Qwen3.8 Kilo policy plugin.",
+    "developerName": "xiuuu4499",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+    "defaultPrompt": "Use the local-model-workbench skill to plan or inspect my local model setup."
+  }
+}

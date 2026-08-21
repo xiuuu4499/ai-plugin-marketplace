@@ -1,0 +1,33 @@
+{
+  "name": "kilo-qwen38-generation-policy",
+  "version": "0.1.0",
+  "description": "Install a global Kilo Code plugin that enforces Qwen3.8 generation profiles before each matching request.",
+  "author": {
+    "name": "xiuuu4499",
+    "url": "https://github.com/xiuuu4499"
+  },
+  "homepage": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+  "repository": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kilo",
+    "qwen",
+    "llama-cpp",
+    "generation-policy",
+    "local-models"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Kilo Qwen3.8 Generation Policy",
+    "shortDescription": "Install and audit Kilo Qwen3.8 request policy.",
+    "longDescription": "Ships a global Kilo plugin, agents, skills, install scripts, and tests for enforcing explicit Qwen3.8 generation parameters before OpenAI-compatible local model calls.",
+    "developerName": "xiuuu4499",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/xiuuu4499/ai-plugin-marketplace",
+    "defaultPrompt": "Help me install or audit the Kilo Qwen3.8 generation-policy plugin."
+  }
+}

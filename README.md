@@ -1,6 +1,6 @@
 # AI Plugin Marketplace
 
-A dedicated Codex marketplace for portable AI-extension tooling. It currently ships four plugins:
+A dedicated Codex marketplace for portable AI-extension tooling. It currently ships six plugins:
 
 | Plugin | Purpose |
 | --- | --- |
@@ -8,6 +8,8 @@ A dedicated Codex marketplace for portable AI-extension tooling. It currently sh
 | `ai-transmute` | Inspect and convert AI skills, commands, agents, hooks, plugins, instruction files, MCP/LSP configuration, and notebooks through auditable OKF intermediates. |
 | `ai-scholar` | Research a subject deeply, curate cited OKF knowledge, and design a human-approved Codex plugin. |
 | `github-docs-api` | Search, retrieve, and build upon GitHub documentation via the official GitHub Docs API. |
+| `kilo-qwen38-generation-policy` | Install a global Kilo Code plugin that enforces explicit Qwen3.8 request parameters. |
+| `local-model-workbench` | Plan and troubleshoot llama.cpp, Qwen3.8, MiniMax H3, ComfyUI, VS Code, and local-model workflows. |
 
 The marketplace lives at [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json). All plugins are maintained in this repository and published by [xiuuu4499](https://github.com/xiuuu4499).
 
@@ -74,6 +76,8 @@ codex plugin add okf@ai-plugin-marketplace
 codex plugin add ai-transmute@ai-plugin-marketplace
 codex plugin add ai-scholar@ai-plugin-marketplace
 codex plugin add github-docs-api@ai-plugin-marketplace
+codex plugin add kilo-qwen38-generation-policy@ai-plugin-marketplace
+codex plugin add local-model-workbench@ai-plugin-marketplace
 ```
 
 Start a new Codex thread after installation so newly installed skills and hooks are loaded. The advisory hooks are fail-open: they provide capped validation context but do not rewrite files or grant permissions.
@@ -115,6 +119,36 @@ GitHub Docs API exposes these skills:
 - `update-github-apis` — re-crawl the GitHub Docs API surface to detect documentation changes and refresh the plugin's knowledge base.
 - `write-api-script` — create a standalone shell or Python script that calls GitHub Docs APIs directly to fetch or process documentation content without AI tooling.
 
+Kilo Qwen3.8 Generation Policy exposes:
+
+- `qwen38-generation-policy` — choose and audit named Qwen3.8 thinking/instruct profiles, with request-time enforcement supplied by the bundled Kilo plugin.
+
+Local Model Workbench exposes:
+
+- `local-model-workbench` — plan, inspect, document, and troubleshoot local model workflows across Kilo, llama.cpp, llama-swap, ComfyUI, MiniMax H3, MCP, and VS Code.
+
+## Install Kilo integration
+
+After installing the Codex plugin from this marketplace, install its Kilo artifacts in the environment where Kilo runs:
+
+```bash
+plugins/kilo-qwen38-generation-policy/scripts/install-kilo-qwen38-policy.sh
+```
+
+PowerShell:
+
+```powershell
+.\plugins\kilo-qwen38-generation-policy\scripts\install-kilo-qwen38-policy.ps1
+```
+
+The installer writes only owned files under `~/.config/kilo` by default and can be redirected with `KILO_TARGET_CONFIG_DIR`. The native implementation is Python; `.sh` and `.ps1` wrappers are provided for platform-native invocation. Run `/reload` in Kilo or restart Kilo after installation.
+
+Uninstall:
+
+```bash
+plugins/kilo-qwen38-generation-policy/scripts/uninstall-kilo-qwen38-policy.sh
+```
+
 ## Requirements
 
 - Python 3 for AI Transmute's deterministic engine and advisory hook.
@@ -134,6 +168,7 @@ Run the deterministic test suite:
 python3 -m unittest discover -s plugins/ai-transmute/tests -v
 python3 -m unittest discover -s plugins/ai-scholar/tests -v
 python3 -m unittest discover -s plugins/github-docs-api/tests -v
+python3 -m unittest discover -s plugins/kilo-qwen38-generation-policy/tests -v
 ```
 
 Validate the persistent knowledge catalog:

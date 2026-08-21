@@ -1,0 +1,31 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "provider": {
+    "local-qwen": {
+      "name": "Local Qwen via llama-swap",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:8080/v1",
+        "apiKey": "none"
+      },
+      "models": {
+        "qwen3.8-27b": {
+          "id": "qwen3.8-27b",
+          "name": "Qwen3.8 27B",
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true,
+          "attachment": true,
+          "modalities": {
+            "input": ["text", "image", "video"],
+            "output": ["text"]
+          },
+          "limit": {
+            "context": 262144,
+            "output": 32000
+          }
+        }
+      }
+    }
+  }
+}
