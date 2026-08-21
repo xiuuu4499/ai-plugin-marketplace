@@ -1,0 +1,89 @@
+schema_version: 1
+policy_id: qwen38-generation-policy
+model_family: qwen3.8
+model: Qwen3.8-27B
+
+managed_parameters:
+  - thinking.enabled
+  - thinking.reasoning_effort
+  - thinking.preserve_thinking
+  - sampling.temperature
+  - sampling.top_p
+  - sampling.top_k
+  - sampling.min_p
+  - sampling.presence_penalty
+  - sampling.frequency_penalty
+  - sampling.repetition_penalty
+
+baselines:
+  thinking:
+    thinking:
+      enabled: true
+      reasoning_effort: xhigh
+      preserve_thinking: true
+    sampling:
+      temperature: 1.0
+      top_p: 0.95
+      top_k: 20
+      min_p: 0.0
+      presence_penalty: 0.0
+      frequency_penalty: 0.0
+      repetition_penalty: 1.0
+  instruct:
+    thinking:
+      enabled: false
+      reasoning_effort: none
+      preserve_thinking: false
+    sampling:
+      temperature: 0.7
+      top_p: 0.80
+      top_k: 20
+      min_p: 0.0
+      presence_penalty: 1.5
+      frequency_penalty: 0.0
+      repetition_penalty: 1.0
+
+profiles:
+  coding-plan-xhigh:
+    inherits: thinking
+    thinking:
+      reasoning_effort: xhigh
+  coding-agent-xhigh:
+    inherits: thinking
+    thinking:
+      reasoning_effort: xhigh
+  coding-agent-medium:
+    inherits: thinking
+    thinking:
+      reasoning_effort: medium
+  chat-direct:
+    inherits: instruct
+  chat-reasoning-medium:
+    inherits: thinking
+    thinking:
+      reasoning_effort: medium
+  chat-reasoning-xhigh:
+    inherits: thinking
+    thinking:
+      reasoning_effort: xhigh
+  prose-plan-medium:
+    inherits: thinking
+    thinking:
+      reasoning_effort: medium
+  prose-write-direct:
+    inherits: instruct
+  media-prompt-direct:
+    inherits: instruct
+  media-prompt-reasoning-medium:
+    inherits: thinking
+    thinking:
+      reasoning_effort: medium
+
+agent_defaults:
+  plan: coding-plan-xhigh
+  code: coding-agent-xhigh
+  chat: chat-direct
+  chat-reasoning: chat-reasoning-medium
+  prose: prose-write-direct
+  media-prompt: media-prompt-direct
+  media-prompt-reasoning: media-prompt-reasoning-medium
